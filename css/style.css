@@ -20,15 +20,14 @@ a {
 @media screen and (min-width: 900px) {
   .cursor {
     position: fixed;
-    top: 0; /* 変更: 0にする */
-    left: 0; /* 変更: 0にする */
-    transform: translate(-50%, -50%); /* 追加: これで常にマウスの中心にくる */
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
     width: 10px;
     height: 10px;
     border-radius: 50%;
     background: #b3b3b3;
     z-index: 9999;
-    /* 変更: top, leftのtransitionを消す（動きをスムーズにするため） */
     transition:
       width 0.3s,
       height 0.3s,
@@ -40,7 +39,6 @@ a {
   .cursor.hover {
     width: 50px;
     height: 50px;
-    /* 変更: topとleftのマイナス指定を削除 */
     background: rgba(192, 216, 224, 0.6);
   }
 
@@ -97,7 +95,7 @@ a {
   align-items: center;
   justify-content: space-between;
   padding: 0 40px;
-  position: relative; /* gnav absolute の基準 */
+  position: relative;
 }
 
 /* PC縦書きナビ */
@@ -147,8 +145,8 @@ a {
 .mv::after {
   content: "";
   position: absolute;
-  top: 80px; /* ヘッダー直下 */
-  right: -70px; /* 右の白余白に出す */
+  top: 80px;
+  right: -70px;
   width: 420px;
   height: 420px;
   background: url("../img/bg.orange.png") no-repeat center / contain;
@@ -243,7 +241,7 @@ a {
 }
 
 /* =========================================
-  Works（整列版）
+  Works
 ========================================= */
 #works {
   position: relative;
@@ -251,7 +249,6 @@ a {
   padding-bottom: 160px;
 }
 
-/* 👇 ここに追加 */
 .works-bg {
   position: absolute;
   top: 10px;
@@ -290,18 +287,6 @@ a {
   transform: translateY(6px);
 }
 
-/* 背景ぼかし */
-.works-bg {
-  position: absolute;
-  top: 10px; /* 見出しの少し上から */
-  right: -120px; /* 右にはみ出させるのがコツ */
-  width: 520px; /* 大きさ調整ここ */
-  max-width: 70vw;
-  opacity: 0.9;
-  pointer-events: none;
-  z-index: 0;
-}
-
 .works-list {
   display: flex;
   flex-direction: column;
@@ -327,10 +312,14 @@ a {
   order: 1;
 }
 
+.works-img {
+  overflow: hidden;
+  border-radius: 14px;
+}
+
 .works-img img {
   width: 100%;
   display: block;
-  border-radius: 14px;
   aspect-ratio: 16/10;
   object-fit: cover;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
@@ -414,35 +403,15 @@ a {
   opacity: 0.75;
 }
 
-.works-img {
-  overflow: hidden;
-  border-radius: 8px; /* お好みで角丸を追加 */
-}
-
-/* 画像本体にトランジションを設定 */
-.works-img img {
-  transition: transform 0.5s ease-out;
-  display: block;
-  width: 100%;
-}
-
-/* ホバー時に画像を拡大 */
-.works-item:hover .works-img img {
-  transform: scale(1.1);
-}
-
 /* =========================================
-  Skill（完全版）
+  Skill
 ========================================= */
-
-/* --- セクション共通（#skill側） --- */
 #skill .container {
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
 }
 
-/* タイトル：左線＋左寄せ（Works/Aboutと同じ見た目） */
 #skill .title {
   position: relative;
   text-align: left;
@@ -463,28 +432,25 @@ a {
   transform: translateY(6px);
 }
 
-/* --- 一覧 --- */
 .skill-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 50px 0; /* 行間（上下） */
+  gap: 50px 0;
   margin-bottom: 0;
 }
 
-/* --- 1つのスキル --- */
 .skill-item {
   width: 48%;
-  display: grid; /* ←重なり防止でgrid固定 */
-  grid-template-columns: 260px 1fr; /* 左=画像 / 右=文章 */
+  display: grid;
+  grid-template-columns: 260px 1fr;
   column-gap: 32px;
   align-items: start;
 }
 
-/* 左：画像 */
 .skill-img {
   margin: 0;
-  position: static !important; /* 変なabsoluteがあっても殺す */
+  position: static !important;
 }
 .skill-img img {
   width: 100%;
@@ -493,9 +459,8 @@ a {
   display: block;
 }
 
-/* 右：文章 */
 .skill-body {
-  position: static !important; /* 変なabsoluteがあっても殺す */
+  position: static !important;
   margin: 0 !important;
   min-width: 0;
 }
@@ -511,62 +476,13 @@ a {
 }
 
 /* =========================================
-  Skill（レスポンシブ）
-========================================= */
-
-/* タブレット寄り：少し詰める */
-@media (max-width: 900px) {
-  #skill .title {
-    font-size: 28px;
-    padding-left: 120px;
-    margin-bottom: 48px;
-  }
-  #skill .title::before {
-    width: 80px;
-  }
-
-  .skill-item {
-    width: 100%;
-    grid-template-columns: 220px 1fr;
-    column-gap: 24px;
-  }
-
-  .skill-img img {
-    max-width: 220px;
-  }
-
-  .skill-text {
-    font-size: 13px;
-    line-height: 1.7;
-  }
-}
-
-/* スマホ：縦積み */
-@media (max-width: 767px) {
-  .skill-item {
-    width: 100%;
-    grid-template-columns: 1fr;
-    row-gap: 16px;
-  }
-
-  .skill-img img {
-    max-width: 160px;
-  }
-
-  .skill-name {
-    font-size: 16px;
-    margin-bottom: 8px;
-  }
-}
-/* =========================================
-  About（あなたの整列版）
+  About
 ========================================= */
 #about {
   margin-top: 100px;
   position: relative;
 }
 
-/* 👇 ここから追加 */
 .about-bg {
   position: absolute;
   top: -50px;
@@ -635,7 +551,7 @@ a {
 }
 
 /* ========================================= 
-  回転寿司スタイル（横スクロール）
+  Works Circle
 ========================================= */
 .works-circle {
   padding: 150px 0 300px 0;
@@ -682,12 +598,11 @@ a {
 
 .works-circle-name {
   font-size: 12px;
-  font-weight: 400; /* 細く */
-  color: #999; /* もっと薄いグレー */
-  opacity: 0.8; /* さらに透明度を下げる */
+  font-weight: 400;
+  color: #999;
+  opacity: 0.8;
 }
 
-/* 無限ループアニメーション */
 @keyframes scroll-loop {
   0% {
     transform: translateX(0);
@@ -697,34 +612,8 @@ a {
   }
 }
 
-/* 無限ループのために要素を2倍にする必要があるので、JavaScriptで対応 */
-
-/* スマホ対応 */
-@media screen and (max-width: 768px) {
-  .works-circle {
-    padding: 60px 0;
-  }
-
-  .works-circle-list {
-    gap: 20px;
-  }
-
-  .works-circle-item {
-    width: 120px;
-  }
-
-  .works-circle-img {
-    width: 100px;
-    height: 100px;
-  }
-
-  .works-circle-name {
-    display: none;
-  }
-}
-
 /* =========================================
-  Contact（見本っぽい）
+  Contact
 ========================================= */
 #contact.contact {
   position: relative;
@@ -734,7 +623,6 @@ a {
   border-top-right-radius: 100% 20%;
 }
 
-/* 背景のふわグラ（画像なしで再現） */
 #contact::before {
   content: "";
   position: absolute;
@@ -780,12 +668,9 @@ a {
   font-size: clamp(72px, 10vw, 160px);
   letter-spacing: 0.18em;
   margin: 0 0 18px;
-
-  /* 薄い縁取り文字 */
   color: transparent;
   -webkit-text-stroke: 2px rgba(255, 255, 255, 0.9);
   text-stroke: 2px rgba(255, 255, 255, 0.9);
-
   opacity: 0.9;
 }
 
@@ -801,14 +686,12 @@ a {
   align-items: center;
   justify-content: center;
   gap: 14px;
-
   min-width: min(520px, 92vw);
   padding: 18px 28px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.75);
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
-
   color: #6d9aa6;
   font-family: "Albert Sans", sans-serif;
   letter-spacing: 0.08em;
@@ -823,24 +706,8 @@ a {
   transform: translateY(-1px);
 }
 
-/* スマホ */
-@media (max-width: 767px) {
-  #contact.contact {
-    padding: 110px 0;
-  }
-  .contact-inner {
-    padding: 0 20px;
-  }
-  .contact-kicker {
-    font-size: 14px;
-  }
-  .contact-lead {
-    font-size: 13px;
-  }
-}
-
 /* ========================================= 
-  Footer（フッター）
+  Footer
 ========================================= */
 .footer {
   background: #fff;
@@ -855,7 +722,6 @@ a {
   align-items: center;
 }
 
-/* フッターナビゲーション */
 .footer-nav {
   display: flex;
   gap: 30px;
@@ -872,7 +738,6 @@ a {
   color: #333;
 }
 
-/* コピーライト */
 .copyright {
   font-size: 12px;
   color: #999;
@@ -880,21 +745,45 @@ a {
   text-align: center;
 }
 
-/* レスポンシブ */
-@media screen and (max-width: 768px) {
-  .footer .container {
-    flex-direction: column;
-    gap: 20px;
-  }
+/* =========================================
+  スクロールアニメーション (定義)
+========================================= */
+.js-fade {
+  opacity: 0 !important;
+  transform: translateY(40px) !important;
+  transition:
+    opacity 0.8s cubic-bezier(0.215, 0.61, 0.355, 1),
+    transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) !important;
+  will-change: opacity, transform;
+}
 
-  .footer-nav {
-    gap: 20px;
-  }
+.works-img img.js-fade {
+  transform: scale(0.85) translateY(40px) !important;
+}
+
+.js-fade.is-active {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.works-img img.js-fade.is-active {
+  transform: scale(1) translateY(0) !important;
+}
+
+.works-item:hover .works-img img.is-active,
+.works-item:active .works-img img.is-active {
+  transform: scale(1.05) translateY(0) !important;
+  transition: transform 0.4s ease !important;
+}
+
+.works-item:hover,
+.works-item:active {
+  transform: translateY(-4px) !important;
+  transition: transform 0.3s ease !important;
 }
 
 /* =========================================
-  Responsive
-  ★スマホはここ1個だけ（上書き事故防止）
+  Responsive (スマホ設定：完全統合版)
 ========================================= */
 @media screen and (max-width: 767px) {
   body {
@@ -910,7 +799,7 @@ a {
 
   .wrapper {
     padding-top: 0;
-  } /* 57px とか入れない（MV崩れる） */
+  }
 
   .container {
     padding: 0 20px;
@@ -920,23 +809,10 @@ a {
     padding: 60px 0;
   }
 
-  /* ===== MV：じゅりさん風（全面・下の白ゼロ） ===== */
+  /* --- MV --- */
   .mv {
     height: 100svh !important;
     overflow: hidden;
-  }
-
-  /* 👇 ここに追加 */
-  .mv-blur {
-    position: absolute;
-    left: 1%;
-    top: 55%;
-    width: clamp(240px, 30vw, 420px);
-    height: auto;
-    z-index: 3;
-    pointer-events: none;
-    opacity: 0;
-    animation: blurIn 0.8s ease-out 0.25s forwards;
   }
 
   .mv-center {
@@ -947,6 +823,7 @@ a {
     left: 0 !important;
     transform: none !important;
   }
+
   .mv .mv-photo {
     position: absolute !important;
     inset: 0 !important;
@@ -985,29 +862,17 @@ a {
     animation: none !important;
   }
 
-  /* 縦書きナビはスマホでは消す */
   .gnav {
     display: none !important;
   }
 
-  /* MV直下の余白をゼロに */
+  /* --- Works --- */
   #works {
     margin-top: 0 !important;
   }
 
-  /* ===== Works：スマホは縦積み ===== */
   #works .container {
     max-width: 720px;
-  }
-
-  #works .title {
-    font-size: 26px;
-    padding-left: 120px;
-    margin-bottom: 48px;
-    text-align: left;
-  }
-  #works .title::before {
-    width: 80px;
   }
 
   .works-item {
@@ -1024,9 +889,6 @@ a {
   }
   .works-text {
     order: 0 !important;
-  }
-
-  .works-text {
     padding-left: 0;
     padding-right: 0;
     max-width: 520px;
@@ -1036,7 +898,16 @@ a {
     justify-self: start;
   }
 
-  /* ===== Skill：縦積み ===== */
+  /* --- Skill --- */
+  #skill .title {
+    font-size: 28px;
+    padding-left: 120px;
+    margin-bottom: 48px;
+  }
+  #skill .title::before {
+    width: 80px;
+  }
+
   .skill-list {
     display: block;
     margin-bottom: 0;
@@ -1044,26 +915,25 @@ a {
   .skill-item {
     width: 100%;
     margin-bottom: 35px;
+    grid-template-columns: 1fr;
+    row-gap: 16px;
   }
   .skill-item:last-child {
     margin-bottom: 0;
+  }
+  .skill-img img {
+    max-width: 160px;
+  }
+  .skill-name {
+    font-size: 16px;
+    margin-bottom: 8px;
   }
   .skill-text {
     font-size: 13px;
     line-height: 1.7;
   }
 
-  /* ===== About：縦積み（あなたの整列版をスマホ化） ===== */
-  #about .title {
-    font-size: 26px;
-    padding-left: 120px;
-    margin-bottom: 48px;
-    text-align: left;
-  }
-  #about .title::before {
-    width: 80px;
-  }
-
+  /* --- About --- */
   #about .profile {
     grid-template-columns: 1fr;
     row-gap: 24px;
@@ -1083,41 +953,94 @@ a {
     margin-bottom: 12px;
   }
 
-  /* footer */
+  /* --- Works Circle --- */
+  .works-circle {
+    padding: 60px 0;
+  }
+  .works-circle-list {
+    gap: 20px;
+  }
+  .works-circle-item {
+    width: 120px;
+  }
+  .works-circle-img {
+    width: 100px;
+    height: 100px;
+  }
+  .works-circle-name {
+    display: none;
+  }
+
+  /* --- Contact（CONTACTの切れ防止） --- */
+  #contact.contact {
+    padding: 80px 0;
+    overflow: hidden;
+  }
+
+  .contact-inner {
+    padding: 0 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .contact-big {
+    font-size: clamp(
+      32px,
+      9.2vw,
+      50px
+    ) !important; /* 「CONTACT」が綺麗に納まるサイズ */
+    letter-spacing: 0.04em !important;
+    white-space: nowrap !important;
+    text-align: center;
+  }
+
+  .contact-mail {
+    min-width: unset !important;
+    width: 100%;
+    max-width: 100%;
+    font-size: 13px;
+    padding: 14px 16px;
+    box-sizing: border-box;
+  }
+
+  /* --- Footer & Footer Nav（ナビの折り返し防止） --- */
   .footer {
-    padding: 20px;
+    padding: 20px 10px;
   }
 
-  /* 下層 */
-  .article {
-    padding: 50px 0;
-  }
-  .article-body h3 {
-    font-size: 16px;
-    padding-left: 0.8em;
-  }
-  .article-body h3:not(:first-child) {
-    margin-top: 30px;
-  }
-  .article-body p {
-    font-size: 14px;
-    line-height: 1.7;
-    margin-bottom: 20px;
+  .footer .container {
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 5px;
   }
 
-  .title {
-    white-space: nowrap;
+  .footer-nav {
+    display: flex !important;
+    flex-wrap: nowrap !important; /* 1行に固定 */
+    justify-content: center !important; /* 中央揃え */
+    align-items: center !important;
+    gap: 8px !important; /* 要素同士の隙間を詰める */
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
   }
-}
 
-/* スマホ用：タイトルのサイズ・折返し調整 */
-@media screen and (max-width: 767px) {
+  .footer-nav li,
+  .footer-nav a,
+  .footer-nav span {
+    white-space: nowrap !important; /* 絶対に改行させない */
+    word-break: keep-all !important;
+    font-size: clamp(10px, 2.7vw, 13px) !important; /* 画面幅に応じて伸縮 */
+    letter-spacing: 0 !important;
+  }
+
+  /* 見出しの共通スマホスタイル */
   #works .title,
   #skill .title,
   #about .title,
   .title {
     font-size: 15px !important;
-    padding-left: 50px !important; /* 左線との余白を調整して1行に収める */
+    padding-left: 50px !important;
     letter-spacing: 0.02em !important;
     white-space: nowrap !important;
   }
@@ -1125,85 +1048,6 @@ a {
   #works .title::before,
   #skill .title::before,
   #about .title::before {
-    width: 38px !important; /* 左の線を少し短く調整 */
-  }
-}
-
-/* =========================================
-  「下から上へ ＋ 真ん中からキュッと広がる」アニメーション（PC・スマホ共通）
-========================================= */
-/* 画像の枠組み */
-.works-img {
-  overflow: hidden;
-  border-radius: 14px;
-}
-
-/* 1. スクロール前の状態（下から上に広がる仕込み） */
-.works-img img.js-fade {
-  opacity: 0;
-  /* 0.8倍に小さく ＋ 下に50px移動させておく */
-  transform: scale(0.8) translateY(50px);
-  /* 広がるスピードと滑らかさを調整 */
-  transition:
-    opacity 0.85s cubic-bezier(0.215, 0.61, 0.355, 1),
-    transform 0.85s cubic-bezier(0.215, 0.61, 0.355, 1);
-  will-change: opacity, transform;
-}
-
-/* カード全体・スキル項目も下からふわっと出現 */
-.works-item.js-fade,
-.skill-item.js-fade {
-  opacity: 0;
-  transform: translateY(35px);
-  transition:
-    opacity 0.8s cubic-bezier(0.215, 0.61, 0.355, 1),
-    transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
-  will-change: opacity, transform;
-}
-
-/* 2. 画面に入った瞬間（下から昇りながら真ん中から一気に広がる） */
-.works-img img.js-fade.is-active {
-  opacity: 1;
-  transform: scale(1) translateY(0);
-}
-
-.works-item.js-fade.is-active,
-.skill-item.js-fade.is-active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* =========================================
-  3. タップ（またはマウスホバー）時のズーム反応
-========================================= */
-.works-img img {
-  transition:
-    transform 0.4s ease,
-    opacity 0.85s ease;
-}
-
-/* タップ・ホバー時に画像がじわっとズームイン */
-.works-item:active .works-img img,
-.works-item:hover .works-img img {
-  transform: scale(1.06) !important;
-}
-
-/* タップ・ホバー時にカード自体が少し浮かぶ */
-.works-item:active,
-.works-item:hover {
-  transform: translateY(-4px) !important;
-  transition: transform 0.3s ease;
-
-  /* 「CONTACT」の大きな文字サイズの調整 */
-  .contact-big {
-    font-size: clamp(
-      40px,
-      11vw,
-      64px
-    ) !important; /* 文字サイズをスマホ用に小さく */
-    letter-spacing: 0.08em !important; /* 文字間隔（字間）を詰める */
-    word-break: keep-all; /* 途中で変に改行されないようにする */
-    white-space: nowrap; /* 1行で収める */
-    max-width: 100%;
+    width: 38px !important;
   }
 }
