@@ -399,32 +399,5 @@
         }
       });
     </script>
-
-    <script>
-      const fadeElements = document.querySelectorAll(
-        ".works-item, .skill-item, .profile",
-      );
-
-      fadeElements.forEach((element) => {
-        element.classList.add("fade-up");
-      });
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("is-show");
-            }
-          });
-        },
-        {
-          threshold: 0.15,
-        },
-      );
-
-      fadeElements.forEach((element) => {
-        observer.observe(element);
-      });
-    </script>
   </body>
 </html>
