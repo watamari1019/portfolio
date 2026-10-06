@@ -1109,22 +1109,14 @@ a {
     white-space: nowrap;
   }
 
-  /* スマホ：見出しを1行でレスポンシブ表示 */
-  @media screen and (max-width: 767px) {
-    #works .title,
-    #skill .title,
-    #about .title {
-      font-size: clamp(20px, 6vw, 28px);
-      padding-left: clamp(70px, 22vw, 100px);
-      letter-spacing: 0.05em;
-      white-space: nowrap;
-      text-align: left;
-    }
+  .title {
+    white-space: nowrap;
+  }
 
-    #works .title::before,
-    #skill .title::before,
-    #about .title::before {
-      width: clamp(45px, 15vw, 70px);
+  @media screen and (max-width: 767px) {
+    .title {
+      font-size: 18px; /* 画面幅に合わせて小さく調整 */
+      letter-spacing: 0.05em;
     }
   }
 }
