@@ -1108,15 +1108,23 @@ a {
   .title {
     white-space: nowrap;
   }
+}
 
+/* スマホ用：タイトルのサイズ・折返し調整（全体の最後に配置） */
+@media screen and (max-width: 767px) {
+  #works .title,
+  #skill .title,
+  #about .title,
   .title {
-    white-space: nowrap;
+    font-size: 18px !important;
+    padding-left: 100px !important; /* 左の線との余白も自動調整 */
+    letter-spacing: 0.05em !important;
+    white-space: nowrap !important;
   }
 
-  @media screen and (max-width: 767px) {
-    .title {
-      font-size: 18px; /* 画面幅に合わせて小さく調整 */
-      letter-spacing: 0.05em;
-    }
+  #works .title::before,
+  #skill .title::before,
+  #about .title::before {
+    width: 60px !important; /* 左の線の長さ調整 */
   }
 }
