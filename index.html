@@ -1,0 +1,403 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <title>ワタナベマリイのポートフォリオ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp-narrow.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/ress.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" media="all" rel="stylesheet" type="text/css" />
+
+    <!-- 万が一CSSの読み込みがうまくいっていない時のために、ここに直接カーソルのCSSを書いておきます -->
+    <style>
+      @media screen and (min-width: 900px) {
+        .cursor {
+          position: fixed;
+          top: 0;
+          left: 0;
+          transform: translate(-50%, -50%);
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: #b3b3b3;
+          z-index: 9999;
+          transition:
+            width 0.3s,
+            height 0.3s,
+            background 0.3s;
+          pointer-events: none;
+        }
+        .cursor.hover {
+          width: 50px;
+          height: 50px;
+          background: rgba(192, 216, 224, 0.6);
+        }
+        * {
+          cursor: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- header -->
+      <header class="header">
+        <div class="container">
+          <nav class="gnav pc-only">
+            <ul class="gnav-list">
+              <li class="gnav-item"><a href="#works">デザインしたもの</a></li>
+              <li class="gnav-item"><a href="#about">わたしのこと</a></li>
+              <li class="gnav-item"><a href="#contact">お問い合わせ</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <!-- /header -->
+
+      <main class="content">
+        <section class="mv">
+          <div class="mv-center">
+            <img class="mv-photo" src="img/mv.jpg" alt="" />
+          </div>
+          <img class="mv-blur" src="img/mv.blur.png" alt="" />
+          <h1 class="mv-title">
+            <img src="img/title.png" alt="ワタナベマリイのポートフォリオ" />
+          </h1>
+        </section>
+
+        <!-- works -->
+        <section class="works section" id="works">
+          <img src="img/mv.blur.png" alt="" class="works-bg" />
+          <div class="container">
+            <h2 class="title">デザインしたもの</h2>
+            <div class="works-list">
+              <a class="works-item" href="works-1.html">
+                <div class="works-img">
+                  <img src="img/works/html1.png" alt="html1" />
+                </div>
+                <div class="works-text">
+                  <p class="works-tag"># website</p>
+                  <p class="works-name">コーポレートサイト</p>
+                  <p class="works-desc">架空の企業サイトを制作しました。</p>
+                  <p class="works-info">
+                    HTML/CSS/JavaScript/jQuery/レスポンシブ対応
+                  </p>
+                  <span class="works-more">詳しくみる →</span>
+                </div>
+              </a>
+              <a class="works-item" href="works-2.html">
+                <div class="works-img">
+                  <img src="img/works/html2.png" alt="html2" />
+                </div>
+                <div class="works-text">
+                  <p class="works-tag"># website</p>
+                  <p class="works-name">プロフィールサイト</p>
+                  <p class="works-desc">自己紹介用のサイトを制作しました。</p>
+                  <p class="works-info">HTML/CSS</p>
+                  <span class="works-more">詳しくみる →</span>
+                </div>
+              </a>
+              <a class="works-item" href="works-3.html">
+                <div class="works-img">
+                  <img src="img/works/wordpress1.png" alt="WordPress" />
+                </div>
+                <div class="works-text">
+                  <p class="works-tag"># website</p>
+                  <p class="works-name">美容室のHP</p>
+                  <p class="works-desc">美容室のHPのサイトを制作しました。</p>
+                  <p class="works-info">WordPress</p>
+                  <span class="works-more">詳しくみる →</span>
+                </div>
+              </a>
+              <a class="works-item" href="works-4.html">
+                <div class="works-img">
+                  <img src="img/works/photoshopp.png" alt="Photoshop" />
+                </div>
+                <div class="works-text">
+                  <p class="works-tag"># website</p>
+                  <p class="works-name">LP模写</p>
+                  <p class="works-desc">
+                    可愛らしいいちごのお店のLPの模写をしました。
+                  </p>
+                  <p class="works-info">AdobePhotoshop</p>
+                </div>
+              </a>
+              <a class="works-item" href="works-5.html">
+                <div class="works-img">
+                  <img src="img/works/xxd.png" alt="AdobeXD" />
+                </div>
+                <div class="works-text">
+                  <p class="works-tag"># website</p>
+                  <p class="works-name">チョコバナー</p>
+                  <p class="works-desc">高級感のあるバナーを作成しました。</p>
+                  <p class="works-info">AdobePhotoshop</p>
+                </div>
+              </a>
+              <a class="works-item" href="works-6.html">
+                <div class="works-img">
+                  <img src="img/works/wordpress2.png" alt="WordPress2" />
+                </div>
+                <div class="works-text">
+                  <p class="works-tag"># website</p>
+                  <p class="works-name">大学のHP</p>
+                  <p class="works-info">WordPress/PHP</p>
+                  <p class="works-desc">
+                    WordPressを用いて制作した大学のWebサイトです。
+                  </p>
+                </div>
+              </a>
+            </div>
+
+            <div class="works-all">
+              <button class="works-all-btn" type="button" aria-expanded="false">
+                <span class="works-all-icon">→</span>
+                <span class="works-all-text">すべてみる</span>
+              </button>
+            </div>
+          </div>
+        </section>
+        <!-- /works -->
+
+        <!-- skill -->
+        <section class="skill section" id="skill">
+          <div class="container">
+            <h2 class="title">いまできること</h2>
+            <div class="skill-list">
+              <div class="skill-item">
+                <p class="skill-img">
+                  <img src="img/skills/html.png" alt="html" />
+                </p>
+                <div class="skill-body">
+                  <h3 class="skill-name">HTML/CSS</h3>
+                  <p class="skill-text">
+                    スマホで見ても表示崩れのないレスポンシブ対応も可能です。
+                  </p>
+                </div>
+              </div>
+              <div class="skill-item">
+                <p class="skill-img">
+                  <img src="img/skills/wordpress.png" alt="wordpress" />
+                </p>
+                <div class="skill-body">
+                  <h3 class="skill-name">WordPress</h3>
+                  <p class="skill-text">
+                    WordPress製の店舗HP・企業HP・メディアサイトなど、Webサイトを0から構築することが可能です。
+                  </p>
+                </div>
+              </div>
+              <div class="skill-item">
+                <p class="skill-img">
+                  <img src="img/skills/js.png" alt="javascript" />
+                </p>
+                <div class="skill-body">
+                  <h3 class="skill-name">Web design</h3>
+                  <p class="skill-text">
+                    Webサイト、バナーの制作をすることができます。
+                  </p>
+                </div>
+              </div>
+              <div class="skill-item">
+                <p class="skill-img">
+                  <img src="img/skills/photoshop.png" alt="photoshop" />
+                </p>
+                <div class="skill-body">
+                  <h3 class="skill-name">Adobe Photoshop</h3>
+                  <p class="skill-text">
+                    Webサイトに必要不可欠なクリエイティブバナーを作ることが可能です。
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- /skill -->
+
+        <!-- about -->
+        <section class="about section" id="about">
+          <img src="img/bg.orange.png" alt="" class="about-bg" />
+          <div class="container">
+            <h2 class="title">わたしのこと</h2>
+            <div class="profile">
+              <p class="profile-img">
+                <img src="img/about.jpg" alt="about" />
+              </p>
+              <div class="profile-body">
+                <p>わたなべ まりい</p>
+                <p>
+                  広島県在住。現在、Web制作を学びながら、サイト制作に取り組んでいます。デザインからコーディング、WordPressの基礎を中心に勉強中です。一つひとつ丁寧に向き合いながら、想いが伝わるWebサイトづくりを心がけています。小さなご相談からでも、お気軽にお問い合わせください。
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- /about -->
+
+        <!-- works-circle -->
+        <section class="works-circle section">
+          <div class="container">
+            <div class="works-circle-list">
+              <a class="works-circle-item" href="works-1.html">
+                <div class="works-circle-img">
+                  <img src="img/works/html1.png" alt="html1" />
+                </div>
+                <p class="works-circle-name">コーポレートサイト</p>
+              </a>
+              <a class="works-circle-item" href="works-2.html">
+                <div class="works-circle-img">
+                  <img src="img/works/html2.png" alt="html2" />
+                </div>
+                <p class="works-circle-name">プロフィールサイト</p>
+              </a>
+              <a class="works-circle-item" href="works-3.html">
+                <div class="works-circle-img">
+                  <img src="img/works/wordpress1.png" alt="WordPress" />
+                </div>
+                <p class="works-circle-name">美容室のHP</p>
+              </a>
+              <a class="works-circle-item" href="works-4.html">
+                <div class="works-circle-img">
+                  <img src="img/works/photoshopp.png" alt="Photoshop" />
+                </div>
+                <p class="works-circle-name">LP模写</p>
+              </a>
+              <a class="works-circle-item" href="works-5.html">
+                <div class="works-circle-img">
+                  <img src="img/works/xxd.png" alt="AdobeXD" />
+                </div>
+                <p class="works-circle-name">チョコバナー</p>
+              </a>
+              <a class="works-circle-item" href="works-6.html">
+                <div class="works-circle-img">
+                  <img src="img/works/wordpress2.png" alt="WordPress2" />
+                </div>
+                <p class="works-circle-name">大学のHP</p>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- contact -->
+        <section class="contact section" id="contact">
+          <div class="contact-inner">
+            <p class="contact-kicker">ご覧いただきありがとうございます</p>
+            <h2 class="contact-big" aria-hidden="true">CONTACT</h2>
+            <p class="contact-lead">
+              下記のメールアドレスにお気軽にご連絡ください
+            </p>
+            <a class="contact-mail" href="mailto:yourmail@example.com">
+              yourmail@example.com <span class="contact-arrow">↗</span>
+            </a>
+          </div>
+        </section>
+        <!-- /contact -->
+      </main>
+
+      <!-- footer -->
+      <footer class="footer">
+        <div class="container">
+          <nav class="footer-nav">
+            <a href="#works">デザインしたもの</a>
+            <span>/</span>
+            <a href="#about">わたしのこと</a>
+            <span>/</span>
+            <a href="#contact">お問い合わせ</a>
+          </nav>
+          <div class="copyright">&copy; 2026 MARII WATANABE</div>
+        </div>
+      </footer>
+      <!-- /footer -->
+    </div>
+    <!-- /.wrapper の閉じタグ -->
+
+    <!-- ★ここにカーソル本体を配置 -->
+    <div class="cursor"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+
+    <!-- JS処理 -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // 1. worksの「すべてみる」ボタン処理
+        const worksList = document.querySelector("#works .works-list");
+        const btn = document.querySelector("#works .works-all-btn");
+        if (worksList && btn) {
+          const items = Array.from(worksList.querySelectorAll(".works-item"));
+          items.forEach((item, i) => {
+            if (i >= 3) item.classList.add("is-hidden");
+          });
+          btn.addEventListener("click", () => {
+            const expanded = btn.getAttribute("aria-expanded") === "true";
+            if (!expanded) {
+              items.forEach((item) => item.classList.remove("is-hidden"));
+              btn.querySelector(".works-all-text").textContent = "閉じる";
+              btn.querySelector(".works-all-icon").textContent = "←";
+              btn.setAttribute("aria-expanded", "true");
+            } else {
+              items.forEach((item, i) => {
+                if (i >= 3) item.classList.add("is-hidden");
+              });
+              btn.querySelector(".works-all-text").textContent = "すべてみる";
+              btn.querySelector(".works-all-icon").textContent = "→";
+              btn.setAttribute("aria-expanded", "false");
+            }
+          });
+        }
+
+        // 2. 回転寿司の要素を複製
+        const circleList = document.querySelector(".works-circle-list");
+        if (circleList) {
+          const items = circleList.innerHTML;
+          circleList.innerHTML = items + items;
+        }
+
+        // 3. カスタムカーソルの処理
+        const cursor = document.querySelector(".cursor");
+
+        if (cursor) {
+          // マウスが動いた時は常に座標を更新（画面サイズが900px以上の時だけ表示）
+          document.addEventListener("mousemove", (e) => {
+            if (window.innerWidth >= 900) {
+              cursor.style.left = e.clientX + "px";
+              cursor.style.top = e.clientY + "px";
+              cursor.style.opacity = "1";
+            } else {
+              cursor.style.opacity = "0";
+            }
+          });
+
+          // 画面からマウスが外れたら隠す
+          document.addEventListener("mouseleave", () => {
+            cursor.style.opacity = "0";
+          });
+
+          // リンク・ボタン ホバー時のアニメーション処理
+          const hoverElements = document.querySelectorAll(
+            "a, button, .works-item, .works-img, .works-circle-item",
+          );
+          hoverElements.forEach((el) => {
+            el.addEventListener("mouseenter", () => {
+              if (window.innerWidth >= 900) cursor.classList.add("hover");
+            });
+            el.addEventListener("mouseleave", () => {
+              cursor.classList.remove("hover");
+            });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
