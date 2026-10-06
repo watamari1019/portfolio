@@ -1127,18 +1127,4 @@ a {
       width: 100px;
     }
   }
-
-  /* スクロールアニメーション */
-  .fade-up {
-    opacity: 0;
-    transform: translateY(50px);
-    transition:
-      opacity 0.9s ease,
-      transform 0.9s ease;
-  }
-
-  .fade-up.is-show {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
