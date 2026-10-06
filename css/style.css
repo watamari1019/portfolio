@@ -1127,4 +1127,20 @@ a {
   #about .title::before {
     width: 45px !important; /* 左の線を短く調整 */
   }
+
+  /* 作品画像の枠組みとトランジション強化 */
+  .works-img {
+    overflow: hidden;
+    border-radius: 14px;
+  }
+
+  .works-img img {
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  /* スマホで指で触れたとき・タップしたときに画像がじんわり拡大 */
+  .works-item:active .works-img img,
+  .works-item:hover .works-img img {
+    transform: scale(1.05);
+  }
 }
