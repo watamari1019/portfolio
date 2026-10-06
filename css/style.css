@@ -1110,14 +1110,14 @@ a {
   }
 }
 
-/* スマホ用：タイトルのサイズ・折返し調整（全体の最後に配置） */
+/* スマホ用：タイトルのサイズ・折返し調整 */
 @media screen and (max-width: 767px) {
   #works .title,
   #skill .title,
   #about .title,
   .title {
-    font-size: 16px !important;
-    padding-left: 60px !important; /* 左線との余白を縮小 */
+    font-size: 15px !important;
+    padding-left: 50px !important; /* 左線との余白を調整して1行に収める */
     letter-spacing: 0.02em !important;
     white-space: nowrap !important;
   }
@@ -1125,22 +1125,72 @@ a {
   #works .title::before,
   #skill .title::before,
   #about .title::before {
-    width: 45px !important; /* 左の線を短く調整 */
+    width: 38px !important; /* 左の線を少し短く調整 */
   }
+}
 
-  /* 作品画像の枠組みとトランジション強化 */
-  .works-img {
-    overflow: hidden;
-    border-radius: 14px;
-  }
+/* =========================================
+  「下から上へ ＋ 真ん中からキュッと広がる」アニメーション（PC・スマホ共通）
+========================================= */
+/* 画像の枠組み */
+.works-img {
+  overflow: hidden;
+  border-radius: 14px;
+}
 
-  .works-img img {
-    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-  }
+/* 1. スクロール前の状態（下から上に広がる仕込み） */
+.works-img img.js-fade {
+  opacity: 0;
+  /* 0.8倍に小さく ＋ 下に50px移動させておく */
+  transform: scale(0.8) translateY(50px);
+  /* 広がるスピードと滑らかさを調整 */
+  transition:
+    opacity 0.85s cubic-bezier(0.215, 0.61, 0.355, 1),
+    transform 0.85s cubic-bezier(0.215, 0.61, 0.355, 1);
+  will-change: opacity, transform;
+}
 
-  /* スマホで指で触れたとき・タップしたときに画像がじんわり拡大 */
-  .works-item:active .works-img img,
-  .works-item:hover .works-img img {
-    transform: scale(1.05);
-  }
+/* カード全体・スキル項目も下からふわっと出現 */
+.works-item.js-fade,
+.skill-item.js-fade {
+  opacity: 0;
+  transform: translateY(35px);
+  transition:
+    opacity 0.8s cubic-bezier(0.215, 0.61, 0.355, 1),
+    transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+  will-change: opacity, transform;
+}
+
+/* 2. 画面に入った瞬間（下から昇りながら真ん中から一気に広がる） */
+.works-img img.js-fade.is-active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.works-item.js-fade.is-active,
+.skill-item.js-fade.is-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================
+  3. タップ（またはマウスホバー）時のズーム反応
+========================================= */
+.works-img img {
+  transition:
+    transform 0.4s ease,
+    opacity 0.85s ease;
+}
+
+/* タップ・ホバー時に画像がじわっとズームイン */
+.works-item:active .works-img img,
+.works-item:hover .works-img img {
+  transform: scale(1.06) !important;
+}
+
+/* タップ・ホバー時にカード自体が少し浮かぶ */
+.works-item:active,
+.works-item:hover {
+  transform: translateY(-4px) !important;
+  transition: transform 0.3s ease;
 }
