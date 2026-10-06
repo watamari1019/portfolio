@@ -1109,22 +1109,22 @@ a {
     white-space: nowrap;
   }
 
+  /* スマホ：見出しを1行でレスポンシブ表示 */
   @media screen and (max-width: 767px) {
-    .title {
-      font-size: 24px; /* スマホで入りきらない場合は数字を小さく調整してください */
-    }
-  }
-
-  @media screen and (max-width: 767px) {
-    #works .title {
-      font-size: 32px;
-      padding-left: 140px;
-      letter-spacing: 0.08em;
+    #works .title,
+    #skill .title,
+    #about .title {
+      font-size: clamp(20px, 6vw, 28px);
+      padding-left: clamp(70px, 22vw, 100px);
+      letter-spacing: 0.05em;
       white-space: nowrap;
+      text-align: left;
     }
 
-    #works .title::before {
-      width: 100px;
+    #works .title::before,
+    #skill .title::before,
+    #about .title::before {
+      width: clamp(45px, 15vw, 70px);
     }
   }
 }
