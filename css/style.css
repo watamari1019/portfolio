@@ -1193,4 +1193,17 @@ a {
 .works-item:hover {
   transform: translateY(-4px) !important;
   transition: transform 0.3s ease;
+
+  /* 「CONTACT」の大きな文字サイズの調整 */
+  .contact-big {
+    font-size: clamp(
+      40px,
+      11vw,
+      64px
+    ) !important; /* 文字サイズをスマホ用に小さく */
+    letter-spacing: 0.08em !important; /* 文字間隔（字間）を詰める */
+    word-break: keep-all; /* 途中で変に改行されないようにする */
+    white-space: nowrap; /* 1行で収める */
+    max-width: 100%;
+  }
 }
