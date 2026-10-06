@@ -398,6 +398,26 @@
           });
         }
       });
+
+      // スマホ・PC共通：スクロールで画像や要素をふわっと表示
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-active");
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+
+      // 作品画像とカード全体を監視対象に設定
+      document
+        .querySelectorAll(".works-img, .works-item, .skill-item")
+        .forEach((el) => {
+          el.classList.add("js-fade");
+          observer.observe(el);
+        });
     </script>
   </body>
 </html>
