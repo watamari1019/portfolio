@@ -1,211 +1,277 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <title>大学のHP - ポートフォリオ</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <title>大学のHP - ポートフォリオ</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp-narrow.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100..900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp-narrow.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100..900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <link href="css/ress.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
+    <link href="css/ress.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
 
-  <style>
-    /* =========================
+    <style>
+      /* =========================
       Works 詳細ページ 共通CSS
     ========================= */
-    .article{ padding: 80px 0 120px; }
-    .article-container{ max-width: 900px; margin: 0 auto; padding: 0 40px; }
+      .article {
+        padding: 80px 0 120px;
+      }
+      .article-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 40px;
+      }
 
-    .article-title{
-      font-size: 42px; font-weight: 700; letter-spacing: .08em;
-      margin: 0 0 40px; color: #333; text-align: center;
-    }
+      .article-title {
+        font-size: 42px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        margin: 0 0 40px;
+        color: #333;
+        text-align: center;
+      }
 
-    .article-body{ line-height: 1.9; }
+      .article-body {
+        line-height: 1.9;
+      }
 
-    .article-image{ margin: 0 0 60px; text-align: center; }
-    .article-image img{
-      width: 100%; max-width: 800px; border-radius: 12px;
-      box-shadow: 0 10px 40px rgba(0,0,0,.08);
-      display:block; margin:0 auto;
-    }
+      .article-image {
+        margin: 0 0 60px;
+        text-align: center;
+      }
+      .article-image img {
+        width: 100%;
+        max-width: 800px;
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        display: block;
+        margin: 0 auto;
+      }
 
-    .article-lead{
-      font-size: 18px; line-height: 1.9; color: #666;
-      margin: 0 auto 60px; text-align: center; max-width: 760px;
-    }
+      .article-lead {
+        font-size: 18px;
+        line-height: 1.9;
+        color: #666;
+        margin: 0 auto 60px;
+        text-align: center;
+        max-width: 760px;
+      }
 
-    .article-body h3{
-      font-size: 22px; font-weight: 600;
-      margin: 50px 0 18px; padding-bottom: 12px;
-      border-bottom: 2px solid #f0f0f0; color: #333;
-    }
-    .article-body h3:first-of-type{ margin-top: 0; }
+      .article-body h3 {
+        font-size: 22px;
+        font-weight: 600;
+        margin: 50px 0 18px;
+        padding-bottom: 12px;
+        border-bottom: 2px solid #f0f0f0;
+        color: #333;
+      }
+      .article-body h3:first-of-type {
+        margin-top: 0;
+      }
 
-    .article-body p{
-      font-size: 16px; line-height: 1.9; color: #555;
-      margin: 0 0 24px;
-    }
+      .article-body p {
+        font-size: 16px;
+        line-height: 1.9;
+        color: #555;
+        margin: 0 0 24px;
+      }
 
-    .article-body a{
-      color: #1ca9e3;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(28,169,227,.35);
-      padding-bottom: 2px;
-    }
-    .article-body a:hover{ opacity: .75; }
+      .article-body a {
+        color: #1ca9e3;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(28, 169, 227, 0.35);
+        padding-bottom: 2px;
+      }
+      .article-body a:hover {
+        opacity: 0.75;
+      }
 
-    .home-link{ text-align: center; margin-top: 80px; }
-    .home-link a{
-      display:inline-block;
-      padding:16px 40px;
-      background:#f8f9fa;
-      color:#333;
-      text-decoration:none;
-      border-radius:30px;
-      font-size:15px;
-      font-weight:500;
-      letter-spacing:.08em;
-      transition: all .3s;
-      border:1px solid #e0e0e0;
-    }
-    .home-link a:hover{
-      background:#fff;
-      box-shadow: 0 4px 15px rgba(0,0,0,.10);
-    }
+      .home-link {
+        text-align: center;
+        margin-top: 80px;
+      }
+      .home-link a {
+        display: inline-block;
+        padding: 16px 40px;
+        background: #f8f9fa;
+        color: #333;
+        text-decoration: none;
+        border-radius: 30px;
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        transition: all 0.3s;
+        border: 1px solid #e0e0e0;
+      }
+      .home-link a:hover {
+        background: #fff;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
 
-    @media (max-width: 767px){
-      .article{ padding: 60px 0 80px; }
-      .article-container{ padding: 0 20px; }
-      .article-title{ font-size: 28px; margin-bottom: 30px; }
-      .article-image{ margin-bottom: 40px; }
-      .article-lead{ font-size: 16px; margin-bottom: 40px; text-align:left; }
-      .article-body h3{ font-size: 20px; margin: 40px 0 14px; }
-      .article-body p{ font-size: 15px; }
-      .home-link{ margin-top: 60px; }
-      .home-link a{ padding: 14px 32px; font-size: 14px; }
-    }
-  </style>
-</head>
+      @media (max-width: 767px) {
+        .article {
+          padding: 60px 0 80px;
+        }
+        .article-container {
+          padding: 0 20px;
+        }
+        .article-title {
+          font-size: 28px;
+          margin-bottom: 30px;
+        }
+        .article-image {
+          margin-bottom: 40px;
+        }
+        .article-lead {
+          font-size: 16px;
+          margin-bottom: 40px;
+          text-align: left;
+        }
+        .article-body h3 {
+          font-size: 20px;
+          margin: 40px 0 14px;
+        }
+        .article-body p {
+          font-size: 15px;
+        }
+        .home-link {
+          margin-top: 60px;
+        }
+        .home-link a {
+          padding: 14px 32px;
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
 
-<body>
-<div class="wrapper">
+  <body>
+    <div class="wrapper">
+      <!-- header -->
+      <header class="header">
+        <div class="container">
+          <nav class="gnav pc-only">
+            <ul class="gnav-list">
+              <li class="gnav-item">
+                <a href="index.html#works">デザインしたもの</a>
+              </li>
+              <li class="gnav-item">
+                <a href="index.html#about">わたしのこと</a>
+              </li>
+              <li class="gnav-item">
+                <a href="index.html#contact">お問い合わせ</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <!-- /header -->
 
-<!-- header -->
-<header class="header">
-  <div class="container">
-    <nav class="gnav pc-only">
-      <ul class="gnav-list">
-        <li class="gnav-item"><a href="index.html#works">デザインしたもの</a></li>
-        <li class="gnav-item"><a href="index.html#about">わたしのこと</a></li>
-        <li class="gnav-item"><a href="index.html#contact">お問い合わせ</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-<!-- /header -->
+      <main class="content">
+        <!-- カスタムカーソル（お手本通り：DOMを置く） -->
+        <div id="cursor" class="cursor"></div>
 
-<main class="content">
+        <article class="article">
+          <div class="article-container">
+            <h2 class="article-title">大学のHP</h2>
 
-  <!-- カスタムカーソル（お手本通り：DOMを置く） -->
-  <div id="cursor" class="cursor"></div>
+            <div class="article-body">
+              <p class="article-image">
+                <img
+                  src="img2/works-detail/works-6.png"
+                  alt="大学のHPデザイン"
+                />
+              </p>
 
-  <article class="article">
-    <div class="article-container">
+              <p class="article-lead">
+                大学の公式ホームページを想定して制作したWebサイトです。
+                情報が整理され、学生や保護者が見やすい構成を意識しました。
+              </p>
 
-      <h2 class="article-title">大学のHP</h2>
+              <h3>担当</h3>
+              <p>デザイン・コーディング</p>
 
-      <div class="article-body">
+              <h3>サイトの目的</h3>
+              <p>大学の情報発信・ブランディング</p>
 
-        <p class="article-image">
-          <img src="img/works-detail/works-6.png" alt="大学のHPデザイン">
-        </p>
+              <h3>使用技術</h3>
+              <p>WordPress / PHP</p>
 
-        <p class="article-lead">
-          大学の公式ホームページを想定して制作したWebサイトです。
-          情報が整理され、学生や保護者が見やすい構成を意識しました。
-        </p>
+              <h3>デザインについて</h3>
+              <p>
+                学校機関らしい信頼感と清潔感を意識した配色とレイアウトでデザインしました。
+                情報量が多くなっても見やすくなるよう、余白と文字サイズのバランスを工夫しています。
+              </p>
 
-        <h3>担当</h3>
-        <p>デザイン・コーディング</p>
+              <h3>コーディングについて</h3>
+              <p>
+                WordPress化を想定し、ブログ感覚で記事を更新できる構成にしました。
+                また、Twitterのフィードをサイト内に表示できるよう設計しています。
+              </p>
+            </div>
 
-        <h3>サイトの目的</h3>
-        <p>大学の情報発信・ブランディング</p>
+            <div class="home-link">
+              <a href="index.html#works">← Works一覧へ戻る</a>
+            </div>
+          </div>
+        </article>
+      </main>
 
-        <h3>使用技術</h3>
-        <p>WordPress / PHP</p>
-
-        <h3>デザインについて</h3>
-        <p>
-          学校機関らしい信頼感と清潔感を意識した配色とレイアウトでデザインしました。
-          情報量が多くなっても見やすくなるよう、余白と文字サイズのバランスを工夫しています。
-        </p>
-
-        <h3>コーディングについて</h3>
-        <p>
-          WordPress化を想定し、ブログ感覚で記事を更新できる構成にしました。
-          また、Twitterのフィードをサイト内に表示できるよう設計しています。
-        </p>
-
-      </div>
-
-      <div class="home-link">
-        <a href="index.html#works">← Works一覧へ戻る</a>
-      </div>
-
+      <!-- footer -->
+      <footer class="footer">
+        <div class="container">
+          <nav class="footer-nav">
+            <a href="index.html#works">デザインしたもの</a>
+            <span>/</span>
+            <a href="index.html#about">わたしのこと</a>
+            <span>/</span>
+            <a href="index.html#contact">お問い合わせ</a>
+          </nav>
+          <div class="copyright">&copy; 2026 MARII WATANABE</div>
+        </div>
+      </footer>
+      <!-- /footer -->
     </div>
-  </article>
 
-</main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
 
-<!-- footer -->
-<footer class="footer">
-  <div class="container">
-    <nav class="footer-nav">
-      <a href="index.html#works">デザインしたもの</a>
-      <span>/</span>
-      <a href="index.html#about">わたしのこと</a>
-      <span>/</span>
-      <a href="index.html#contact">お問い合わせ</a>
-    </nav>
-    <div class="copyright">&copy; 2026 MARII WATANABE</div>
-  </div>
-</footer>
-<!-- /footer -->
+    <script>
+      // カスタムカーソル（900px以上）※お手本通り
+      if (window.innerWidth >= 900) {
+        const cursor = document.querySelector(".cursor");
 
-</div>
+        if (cursor) {
+          document.addEventListener("mousemove", (e) => {
+            cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+          });
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script type="text/javascript" src="js/script.js"></script>
+          const hoverElements = document.querySelectorAll("a, button");
 
-<script>
-  // カスタムカーソル（900px以上）※お手本通り
-  if (window.innerWidth >= 900) {
-    const cursor = document.querySelector('.cursor');
+          hoverElements.forEach((el) => {
+            el.addEventListener("mouseenter", () => {
+              cursor.classList.add("hover");
+            });
 
-    if (cursor) {
-      document.addEventListener('mousemove', (e) => {
-        cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-      });
-
-      const hoverElements = document.querySelectorAll('a, button');
-
-      hoverElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-          cursor.classList.add('hover');
-        });
-
-        el.addEventListener('mouseleave', () => {
-          cursor.classList.remove('hover');
-        });
-      });
-    }
-  }
-</script>
-
-</body>
+            el.addEventListener("mouseleave", () => {
+              cursor.classList.remove("hover");
+            });
+          });
+        }
+      }
+    </script>
+  </body>
 </html>
