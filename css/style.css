@@ -1115,14 +1115,16 @@ a {
     }
   }
 
-  /* すでに書いてあるコード（そのままでOK） */
-  .title {
-    white-space: nowrap;
-  }
-
   @media screen and (max-width: 767px) {
-    .title {
-      font-size: 24px;
+    #works .title {
+      font-size: 32px;
+      padding-left: 140px;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+
+    #works .title::before {
+      width: 100px;
     }
   }
 }
