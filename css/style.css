@@ -1104,4 +1104,14 @@ a {
     line-height: 1.7;
     margin-bottom: 20px;
   }
+
+  .title {
+    white-space: nowrap;
+  }
+
+  @media screen and (max-width: 767px) {
+    .title {
+      font-size: 24px; /* スマホで入りきらない場合は数字を小さく調整してください */
+    }
+  }
 }
